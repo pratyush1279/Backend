@@ -24,4 +24,9 @@ app.use("/api/v1/users", userRouter)
 
 // http://localhost:8000/users/register
 
+app.use((req, res, next) => {
+    console.log("REQUEST RECEIVED:", req.method, req.originalUrl);
+    next();
+});
+
 export {app}

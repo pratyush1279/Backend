@@ -1,5 +1,5 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-
+import {ApiError} from "../utils/ApiError.js"
 
 const registerUser = asyncHandler( async (req, res) => {
     // get the user details
@@ -11,7 +11,13 @@ const registerUser = asyncHandler( async (req, res) => {
     // check for user creation
     // return res
 
+
+    const {fullName, email, username, password}  =  req.body
+    console.log("email:", email)
+
+
 } )
+
 
 
 export {registerUser}
